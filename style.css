@@ -1,0 +1,74 @@
+body   {
+	background-image: url(../Images/collage.jpg);
+	background-size: 100%;
+}
+
+#fore  {
+		 max-width: 1000px;
+   		 height: 450px;
+		background-color: black;
+		z-index: 3;
+		position: relative;
+		left: 175px;
+		top: 75px;
+		overflow: auto;
+}
+
+h2  {
+	font-weight: bold;
+	font-size: 64px;
+	text-align: center;
+	color: white;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+button  {
+		background-color: white;
+		color: black;
+		font-size: 24px;
+		padding-top: 5px;
+		padding-left: 10px;
+		padding-bottom: 5px;
+		padding-right: 10px;
+		text-align: center;
+		position: relative;
+		left: 400px;
+		top: 100px;
+}
+
+#QA    {
+	  background-color: black;
+     height: 300px;
+}
+
+
+.Q   {
+	color: white;
+	text-align: center;
+}
+
+.answers  {
+	color: white;
+	text-align: center;
+}
+
+input  {
+	display: inline;
+}
+
+#timer  {
+	color: white;
+	position: relative;
+	left: 450px;
+	bottom: 25px;
+}
+
+#final  {
+	background-color: white;
+	width: 150px;
+	height: 150px;
+	position: relative;
+	bottom: 350px;
+	left: 400px;
+	font-weight: bold;
+}

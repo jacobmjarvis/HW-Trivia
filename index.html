@@ -1,0 +1,223 @@
+<!Doctype html>
+<html>
+<head>
+<title>Trivia Game</title>
+<link rel="stylesheet" type="text/css" href="Assets/CSS/style.css">
+
+
+</head>
+<body>
+<div id="fore">
+<h2>Trivia Game</h2>
+<button>Start Game</button>
+<div id="QA">
+
+<p id="timer"></p>
+<p class="Q" id="q1">How many seasons of Handmaid's Tale have there been?</p>
+<ul class="answers">
+<input type="radio" name="q1" value="a" id="q1a"><label for="q1a">4</label><br/>
+<input type="radio" name="q1" value="b" id="q1b"><label for="q1b">1</label><br/>
+<input type="radio" name="q1" value="c" id="q1c"><label for="q1c">3</label><br/>
+<input type="radio" name="q1" value="d" id="q1d"><label for="q1d">6</label><br/>
+</ul>
+
+<p class="Q">Who is the infamous Jacob from the show Lost?</p>
+
+<ul class="answers">
+<input type="radio" name="q2" value="a" id="q2a"><label for="q2a">Darhma Leader</label><br/>
+<input type="radio" name="q2" value="b" id="q2b"><label for="q2b">Doctor</label><br/>
+<input type="radio" name="q2" value="c" id="q2c"><label for="q2c">Producer</label><br/>
+<input type="radio" name="q2" value="d" id="q2d"><label for="q2d">Protector of the island</label><br/>
+</ul>
+
+<p class="Q">What is the famous quote from Dr.McCoy from Star Trek?</p>
+
+<ul class="answers">
+<input type="radio" name="q3" value="a" id="q3a"><label for="q3a">He's dead Jim.</label><br/>
+<input type="radio" name="q3" value="b" id="q3b"><label for="q3b">I'm giving it all she's got captian.</label><br/>
+<input type="radio" name="q3" value="c" id="q3c"><label for="q3c">Life is but a dream.</label><br/>
+<input type="radio" name="q3" value="d" id="q3d"><label for="q3d">We are all puppets in the play of life.</label><br/>
+</ul>
+
+<p class="Q">What is the number of seasons of the Simpsons to date?</p>
+
+<ul class="answers">
+<input type="radio" name="q4" value="a" id="q4a"><label for="q4a">1</label><br/>
+<input type="radio" name="q4" value="b" id="q4b"><label for="q4b">22</label><br/>
+<input type="radio" name="q4" value="c" id="q4c"><label for="q4c">28</label><br/>
+<input type="radio" name="q4" value="d" id="q4d"><label for="q4d">5</label><br/>
+</ul>
+
+<p class="Q">What is the name of a popular 90's series featuring a cast of individuals who hungout in a coffee shop?</p>
+
+<ul class="answers">
+<input type="radio" name="q5" value="a" id="q5a"><label for="q5a">Rosanne</label><br/>
+<input type="radio" name="q5" value="b" id="q5b"><label for="q5b">Friends</label><br/>
+<input type="radio" name="q5" value="c" id="q5c"><label for="q5c">The Cosby Show</label><br/>
+<input type="radio" name="q5" value="d" id="q5d"><label for="q5d">Fred</label><br/>
+</ul>
+
+
+<p class="Q">What is the name of the popular dective drama produced by Woody Harrelson?</p>
+
+<ul class="answers">
+<input type="radio" name="q6" value="a" id="q6a"><label for="q6a">Fruit of the Loom</label><br/>
+<input type="radio" name="q6" value="b" id="q6b"><label for="q6b">Cartoon Network</label><br/>
+<input type="radio" name="q6" value="c" id="q6c"><label for="q6c">Old Spice</label><br/>
+<input type="radio" name="q6" value="d" id="q6d"><label for="q6d">True Detective</label><br/>
+</ul>
+
+<button id="submit">Finished</button>
+
+</div>
+
+<div id="final">
+
+<p class="finattext">Correct Answers:<br><span id="right"></span></p>
+<br>
+<p class="finaltext">Incorrect Answers:<br><span id="wrong"></span></p>
+
+</div>
+
+</div>
+
+
+<script type="text/javascript" src="Assets/Javascript/apps.js"></script>
+<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script type="text/javascript">
+$(".Q").hide();
+$(".answers").hide();
+$("#timer").hide();
+$("#final").hide();
+$("#submit").hide();
+
+$("button").on("click", function()  {
+
+$(this).hide();
+
+$("#timer").show();
+
+$(".Q").show();
+
+$(".answers").show();
+
+$("#submit").show();
+
+});	
+var count=30;
+
+var counter=setInterval(timer, 1000); 
+
+function timer()
+{
+  count=count-1;
+  if (count <= 0)
+  {
+     clearInterval(counter);
+     
+     return;
+  };
+
+ $("#timer").html(count + " secs");
+};
+
+var wincounter = 1
+var score= wincounter;
+
+var losscounter = 1
+var lossscore = losscounter
+
+if($("#q1b").on("click", function()  {
+	$("#right").text(score++);
+}));
+if($("#q1a").on("click", function()   {
+	$("#wrong").text(lossscore++);
+}));
+if($("#q1c").on("click", function()   {
+	$("#wrong").text(lossscore++);
+}));
+if($("#q1d").on("click", function()   {
+	$("#wrong").text(lossscore++);
+}));
+
+
+if($("#q2d").on("click", function()  {
+	$("#right").text(score++);
+}));
+if($("#q2a").on("click", function()   {
+	$("#wrong").text(lossscore++);
+}));
+if($("#q2c").on("click", function()   {
+	$("#wrong").text(lossscore++);
+}));
+if($("#q2b").on("click", function()   {
+	$("#wrong").text(lossscore++);
+}));
+
+if($("#q3a").on("click", function()  {
+	$("#right").text(score++);
+}));
+if($("#q3b").on("click", function()   {
+	$("#wrong").text(lossscore++);
+}));
+if($("#q3c").on("click", function()   {
+	$("#wrong").text(lossscore++);
+}));
+if($("#q3d").on("click", function()   {
+	$("#wrong").text(lossscore++);
+}));
+
+if($("#q4c").on("click", function()  {
+	$("#right").text(score++);
+}));
+if($("#q4a").on("click", function()   {
+	$("#wrong").text(lossscore++);
+}));
+if($("#q4b").on("click", function()   {
+	$("#wrong").text(lossscore++);
+}));
+if($("#q4d").on("click", function()   {
+	$("#wrong").text(lossscore++);
+}));
+
+if($("#q5b").on("click", function()  {
+	$("#right").text(score++);
+}));
+if($("#q5a").on("click", function()   {
+	$("#wrong").text(lossscore++);
+}));
+if($("#q5c").on("click", function()   {
+	$("#wrong").text(lossscore++);
+}));
+if($("#q5d").on("click", function()   {
+	$("#wrong").text(lossscore++);
+}));
+
+if($("#q6d").on("click", function()  {
+	$("#right").text(score++);
+}));
+if($("#q6a").on("click", function()   {
+	$("#wrong").text(lossscore++);
+}));
+if($("#q6b").on("click", function()   {
+	$("#wrong").text(lossscore++);
+}));
+if($("#q6c").on("click", function()   {
+	$("#wrong").text(lossscore++);
+}));
+
+$("#submit").on("click", function()  {
+	$(".Q").hide();
+	$(".answers").hide();
+	$("#timer").hide();
+	$("#final").show();
+	$("#submit").hide();
+});
+
+
+</script>
+
+
+
+</body>
+</html>
